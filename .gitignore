@@ -1,0 +1,82 @@
+# ======================
+# ROOT
+# ======================
+
+node_modules/
+
+# ======================
+# BACKEND
+# ======================
+
+backend/node_modules/
+backend/dist/
+backend/.env
+
+# ======================
+# MOBILE
+# ======================
+
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/.env
+
+# ======================
+# EXPO
+# ======================
+
+.expo/
+web-build/
+expo-env.d.ts
+
+# ======================
+# LOGS
+# ======================
+
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# ======================
+# ENV
+# ======================
+
+.env
+.env.local
+.env.*.local
+
+# ======================
+# TYPESCRIPT
+# ======================
+
+*.tsbuildinfo
+
+# ======================
+# OS
+# ======================
+
+.DS_Store
+Thumbs.db
+
+# ======================
+# NATIVE
+# ======================
+
+ios/
+android/
+.kotlin/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# ======================
+# LOCAL-ONLY DOCS
+# ======================
+
+CLAUDE.md
+CONTEXT.md
+docs/

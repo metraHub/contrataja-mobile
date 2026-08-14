@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931909697312",
+    "project_id": "contrataja-16abb",
+    "storage_bucket": "contrataja-16abb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931909697312:android:5cbb352b18fbb47e05a145",
+        "android_client_info": {
+          "package_name": "com.contrataja.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC70GQwWToiRPGwzraeApevW8aA5sEFmK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
