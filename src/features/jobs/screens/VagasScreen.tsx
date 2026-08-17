@@ -11,6 +11,7 @@ import {
   Alert,
   RefreshControl,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors, spacing, radius, typography } from '../../../theme/colors';
 import { useJobCallsStore } from '../store/jobCallsStore';
@@ -29,6 +30,7 @@ export default function VagasScreen({ navigation }: any) {
   const [activeFilter, setActiveFilter] = useState<FilterType>('Todos');
   const [selectedVaga, setSelectedVaga] = useState<any | null>(null);
   const [applying, setApplying] = useState(false);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     fetchOpenJobCalls();
@@ -208,7 +210,7 @@ export default function VagasScreen({ navigation }: any) {
       {/* Detail Modal */}
       <Modal visible={!!selectedVaga} animationType="slide" transparent>
         <View style={s.modalOverlay}>
-          <View style={s.modalContent}>
+          <View style={[s.modalContent, { paddingBottom: insets.bottom + spacing.md }]}>
             <View style={s.modalHeader}>
               <Text style={s.modalTitle}>Detalhes da Vaga</Text>
               <TouchableOpacity onPress={() => setSelectedVaga(null)}>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LiveKitRoom, VideoTrack } from '@livekit/react-native';
 import { useTracks, useLocalParticipant, useConnectionState, useRoomContext } from '@livekit/components-react';
 import { Track, ConnectionState } from 'livekit-client';
@@ -9,7 +10,7 @@ import { useAuthStore } from '../../auth/store/authStore';
 import { UserType } from '../../../types';
 import ResumePane from '../components/ResumePane';
 import CallControls from '../components/CallControls';
-import { colors } from '../../../theme/colors';
+import { colors, spacing } from '../../../theme/colors';
 
 const LIVEKIT_URL = process.env.EXPO_PUBLIC_LIVEKIT_URL;
 
@@ -84,6 +85,7 @@ function VideoArea({ candidateId, navigation }: { candidateId: string; navigatio
   const connectionState = useConnectionState();
   const room = useRoomContext();
 
+  const insets = useSafeAreaInsets();
   const localTrackRef = tracks.find((t) => t.participant.isLocal);
   const remoteTrackRef = tracks.find((t) => !t.participant.isLocal);
 
@@ -119,7 +121,7 @@ function VideoArea({ candidateId, navigation }: { candidateId: string; navigatio
         </View>
       )}
 
-      <View style={s.controlsBar}>
+      <View style={[s.controlsBar, { paddingBottom: insets.bottom + spacing.sm }]}>
         <CallControls
           isMicrophoneEnabled={isMicrophoneEnabled}
           isCameraEnabled={isCameraEnabled}
